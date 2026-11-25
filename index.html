@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131f">
+  <meta name="description" content="Joue à Snake directement dans ton navigateur, gratuitement.">
+  <title>Snake — joue maintenant</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Accueil Snake">🟩 <span>mini<span class="brand-accent">jeux</span></span></a>
+      <span class="top-note">Un jeu, tout de suite.</span>
+    </header>
+
+    <section class="game-layout" aria-labelledby="game-title">
+      <div class="intro">
+        <p class="eyebrow">LE JEU DU MOMENT</p>
+        <h1 id="game-title">Snake<span class="title-dot">.</span></h1>
+        <p class="description">Attrape les pommes, grandis et essaie de battre ton record. Pas de téléchargement, pas d’inscription : joue directement ici.</p>
+        <div class="score-row" aria-live="polite">
+          <div class="score-card"><span class="score-label">SCORE</span><strong id="score">0</strong></div>
+          <div class="score-card best-card"><span class="score-label">RECORD</span><strong id="best">0</strong></div>
+        </div>
+        <div class="actions">
+          <button class="primary-button" id="start-button" type="button">▶ <span>Jouer</span></button>
+          <button class="secondary-button" id="pause-button" type="button" disabled>Ⅱ <span>Pause</span></button>
+        </div>
+        <p class="help"><strong>Comment jouer</strong><br>Utilise les flèches du clavier ou les touches <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>. Sur mobile, utilise les boutons ci-dessous.</p>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board-heading"><span><i class="status-dot" id="status-dot"></i><span id="status-text">Prêt à jouer</span></span><span class="board-tag">SNAKE · 01</span></div>
+        <div class="canvas-frame">
+          <canvas id="game" width="400" height="400" aria-label="Jeu Snake. Appuie sur Jouer pour commencer."></canvas>
+          <div class="screen-message" id="screen-message">
+            <span class="message-icon">🐍</span>
+            <strong id="message-title">Prêt ?</strong>
+            <span id="message-text">Appuie sur Jouer pour commencer</span>
+          </div>
+        </div>
+        <div class="mobile-controls" aria-label="Commandes tactiles">
+          <button type="button" data-direction="up" aria-label="Aller vers le haut">↑</button>
+          <div class="control-row">
+            <button type="button" data-direction="left" aria-label="Aller vers la gauche">←</button>
+            <button type="button" data-direction="down" aria-label="Aller vers le bas">↓</button>
+            <button type="button" data-direction="right" aria-label="Aller vers la droite">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>Fait pour jouer. <span>Bonne chance !</span></footer>
+  </main>
+</body>
+</html>
